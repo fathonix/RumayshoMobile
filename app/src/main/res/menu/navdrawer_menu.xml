@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/categoryfragment"
+        android:icon="@drawable/ic_category"
+        android:title="@string/categories" />
+
+    <item
+        android:id="@+id/tagsfragment"
+        android:icon="@drawable/ic_tags"
+        android:title="@string/tags" />
+
+    <item
+        android:id="@+id/facebookfragment"
+        android:icon="@drawable/ic_facebook"
+        android:title="@string/facebook" />
+
+    <item
+        android:id="@+id/twitterfragment"
+        android:icon="@drawable/ic_twitter"
+        android:title="@string/twitter" />
+
+    <item
+        android:id="@+id/youtubefragment"
+        android:icon="@drawable/ic_youtube"
+        android:title="@string/youtube" />
+
+    <item
+        android:id="@+id/instagramfragment"
+        android:icon="@drawable/ic_instagram"
+        android:title="@string/instagram" />
+
+</menu>
