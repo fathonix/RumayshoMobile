@@ -10,24 +10,27 @@
         android:icon="@drawable/ic_tags"
         android:title="@string/tags" />
 
-    <item
-        android:id="@+id/facebookfragment"
-        android:icon="@drawable/ic_facebook"
-        android:title="@string/facebook" />
+    <item android:title="@string/social_media">
+        <menu>
+            <item
+                android:id="@+id/facebookfragment"
+                android:icon="@drawable/ic_facebook"
+                android:title="@string/facebook" />
 
-    <item
-        android:id="@+id/twitterfragment"
-        android:icon="@drawable/ic_twitter"
-        android:title="@string/twitter" />
+            <item
+                android:id="@+id/twitterfragment"
+                android:icon="@drawable/ic_twitter"
+                android:title="@string/twitter" />
 
-    <item
-        android:id="@+id/youtubefragment"
-        android:icon="@drawable/ic_youtube"
-        android:title="@string/youtube" />
+            <item
+                android:id="@+id/youtubefragment"
+                android:icon="@drawable/ic_youtube"
+                android:title="@string/youtube" />
 
-    <item
-        android:id="@+id/instagramfragment"
-        android:icon="@drawable/ic_instagram"
-        android:title="@string/instagram" />
-
+            <item
+                android:id="@+id/instagramfragment"
+                android:icon="@drawable/ic_instagram"
+                android:title="@string/instagram" />
+        </menu>
+    </item>
 </menu>
