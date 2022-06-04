@@ -6,6 +6,6 @@
             android:radius="18dp"/>
     <!-- TabLayout background color -->
     <solid
-            android:color="@color/black"/>
+            android:color="@android:color/transparent"/>
 
 </shape>
