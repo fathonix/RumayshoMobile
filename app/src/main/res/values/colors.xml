@@ -8,4 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="grayItem">#FF666666</color>
+
+    <color name="fg">#FF000000</color>
+    <color name="bg">#FFFFFFFF</color>
+    <color name="statusBarColor">#FFBCBCBC</color>
 </resources>
