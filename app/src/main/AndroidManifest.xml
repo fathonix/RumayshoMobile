@@ -17,6 +17,7 @@
             android:exported="true"/>
         <activity
             android:name=".ui.view.SplashActivity"
+            android:theme="@style/NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -26,6 +27,7 @@
         </activity>
         <activity
             android:name=".ui.view.MainActivity"
+            android:theme="@style/NoActionBar"
             android:exported="true" />
     </application>
 
