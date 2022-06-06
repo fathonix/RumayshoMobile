@@ -24,4 +24,20 @@
         android:label="@string/tags"
         tools:layout="@layout/fragment_tags" />
 
+    <fragment
+        android:id="@+id/fragment_detail"
+        android:name="com.idn.rumayshomobile.ui.fragment.DetailFragment"
+        android:label="@string/detail"
+        tools:layout="@layout/fragment_detail">
+
+        <argument
+            android:name="groupId"
+            app:argType="integer" />
+
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_detailFragment"
+        app:destination="@id/fragment_detail" />
+
 </navigation>
