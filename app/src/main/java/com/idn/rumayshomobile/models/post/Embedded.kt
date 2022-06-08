@@ -1,12 +1,11 @@
 package com.idn.rumayshomobile.models.post
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import com.redgunner.worddroid.models.post.WpFeaturedmedia
-import com.redgunner.worddroid.models.post.WpTerm
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Embedded(
-    @SerializedName("wp:featuredmedia")
-    val wp_FeaturedMedia: List<WpFeaturedmedia>,
-    @SerializedName("wp:term")
-    val wp_Term: List<List<WpTerm>>
-)
+    @field:SerializedName("wp:featuredmedia")
+    val wpFeaturedMedia: List<WpFeaturedMedia?>? = null
+) : Parcelable
