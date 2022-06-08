@@ -2,9 +2,9 @@
     <string name="app_name">Rumaysho Mobile</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="tab1">Belajar Islam</string>
-    <string name="tab2">Naskah Khutbah</string>
-    <string name="tab3">Hukum Islam</string>
+    <string name="tab1">Aqidah</string>
+    <string name="tab2">Akhlaq</string>
+    <string name="tab3">Amalan</string>
 
     <string name="home">Home</string>
     <string name="categories">Categories</string>
