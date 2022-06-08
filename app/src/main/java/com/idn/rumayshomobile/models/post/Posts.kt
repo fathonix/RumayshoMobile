@@ -1,12 +1,23 @@
 package com.idn.rumayshomobile.models.post
 
-import com.redgunner.worddroid.models.post.Content
-import com.redgunner.worddroid.models.post.Title
+import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Posts(
-    val _embedded: Embedded,
-    val content: Content,
-    val date: String,
-    val id: Int,
-    val title: Title
-)
+    @field:SerializedName("id")
+    val id: Int? = null,
+
+    @field:SerializedName("date")
+    val date: String? = null,
+
+    @field:SerializedName("title")
+    val title: Title? = null,
+
+    @field:SerializedName("content")
+    val content: Content? = null,
+
+    @field:SerializedName("_embedded")
+    val embedded: Embedded? = null,
+) : Parcelable
