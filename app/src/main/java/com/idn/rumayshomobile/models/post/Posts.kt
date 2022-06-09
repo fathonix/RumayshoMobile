@@ -9,8 +9,8 @@ data class Posts(
     @field:SerializedName("id")
     val id: Int? = null,
 
-    @field:SerializedName("date")
-    val date: String? = null,
+    @field:SerializedName("date_gmt")
+    val dateGmt: String? = null,
 
     @field:SerializedName("title")
     val title: Title? = null,
@@ -20,4 +20,7 @@ data class Posts(
 
     @field:SerializedName("_embedded")
     val embedded: Embedded? = null,
+
+    @field:SerializedName("yoast_head_json")
+    val yoastHeadJson: YoastHeadJson? = null
 ) : Parcelable
