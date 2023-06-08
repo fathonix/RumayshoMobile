@@ -16,28 +16,32 @@
         android:id="@+id/fragment_categories"
         android:name="com.idn.rumayshomobile.ui.fragment.CategoriesFragment"
         android:label="@string/categories"
-        tools:layout="@layout/fragment_categories" />
+        tools:layout="@layout/fragment_collection" />
 
     <fragment
         android:id="@+id/fragment_tags"
         android:name="com.idn.rumayshomobile.ui.fragment.TagsFragment"
         android:label="@string/tags"
-        tools:layout="@layout/fragment_tags" />
+        tools:layout="@layout/fragment_collection" />
 
     <fragment
-        android:id="@+id/fragment_detail"
-        android:name="com.idn.rumayshomobile.ui.fragment.DetailFragment"
+        android:id="@+id/fragment_collection_detail"
+        android:name="com.idn.rumayshomobile.ui.fragment.CollectionDetailFragment"
         android:label="@string/detail"
-        tools:layout="@layout/fragment_detail">
+        tools:layout="@layout/fragment_collection_detail">
 
         <argument
-            android:name="groupId"
+            android:name="collectionId"
             app:argType="integer" />
+
+        <argument
+            android:name="collectionType"
+            app:argType="com.idn.rumayshomobile.models.type.CollectionType" />
 
     </fragment>
 
     <action
-        android:id="@+id/action_global_detailFragment"
-        app:destination="@id/fragment_detail" />
+        android:id="@+id/action_to_detail"
+        app:destination="@id/fragment_collection_detail" />
 
 </navigation>

@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/item_home"
+        android:id="@+id/fragment_home"
         android:icon="@drawable/ic_home"
         android:title="@string/home" />
     <item
-        android:id="@+id/categoryfragment"
+        android:id="@+id/fragment_categories"
         android:icon="@drawable/ic_category"
         android:title="@string/categories" />
 
     <item
-        android:id="@+id/tagsfragment"
+        android:id="@+id/fragment_tags"
         android:icon="@drawable/ic_tags"
         android:title="@string/tags" />
 
     <item android:title="@string/social_media">
         <menu>
             <item
-                android:id="@+id/facebookfragment"
+                android:id="@+id/facebook_fragment"
                 android:icon="@drawable/ic_facebook"
                 android:title="@string/facebook" />
 
             <item
-                android:id="@+id/twitterfragment"
+                android:id="@+id/twitter_fragment"
                 android:icon="@drawable/ic_twitter"
                 android:title="@string/twitter" />
 
             <item
-                android:id="@+id/youtubefragment"
+                android:id="@+id/youtube_fragment"
                 android:icon="@drawable/ic_youtube"
                 android:title="@string/youtube" />
 
             <item
-                android:id="@+id/instagramfragment"
+                android:id="@+id/instagram_fragment"
                 android:icon="@drawable/ic_instagram"
                 android:title="@string/instagram" />
         </menu>

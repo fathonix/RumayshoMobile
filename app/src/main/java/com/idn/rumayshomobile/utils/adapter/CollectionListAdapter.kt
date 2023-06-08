@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.idn.rumayshomobile.databinding.GroupRowItemBinding
 import com.idn.rumayshomobile.models.collection.Collection
 
-class GroupListAdapter : PagingDataAdapter<Collection, GroupListAdapter.GroupViewHolder>(POST_COMPARATOR) {
+class CollectionListAdapter : PagingDataAdapter<Collection, CollectionListAdapter.GroupViewHolder>(POST_COMPARATOR) {
 
     inner class GroupViewHolder(val binding: GroupRowItemBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -16,7 +16,6 @@ class GroupListAdapter : PagingDataAdapter<Collection, GroupListAdapter.GroupVie
     companion object {
         private val POST_COMPARATOR = object : DiffUtil.ItemCallback<Collection>() {
             override fun areItemsTheSame(oldItem: Collection, newItem: Collection): Boolean {
-
                 return oldItem.id == newItem.id
             }
 
@@ -29,7 +28,7 @@ class GroupListAdapter : PagingDataAdapter<Collection, GroupListAdapter.GroupVie
     override fun onBindViewHolder(holder: GroupViewHolder, position: Int) {
         val currentItem = getItem(position)
 
-        if (currentItem != null) {
+        if (currentItem != null && currentItem.count > 0) {
             holder.binding.apply {
                 tvTitle.text = currentItem.name
                 tvQuantity.text = currentItem.count.toString()

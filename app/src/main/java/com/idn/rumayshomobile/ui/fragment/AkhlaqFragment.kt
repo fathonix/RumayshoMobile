@@ -52,7 +52,7 @@ class AkhlaqFragment : Fragment() {
                     override fun onItemClicked(post: Posts) {
                         startActivity(
                             Intent(context, DetailActivity::class.java)
-                                .putExtra("data", post)
+                                .putExtra(DetailActivity.EXTRA_DATA, post)
                         )
                     }
                 }

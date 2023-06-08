@@ -23,7 +23,6 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 class LatestFragment : Fragment() {
-
     private lateinit var binding: FragmentViewPagerBinding
     private lateinit var viewModel: SharedViewModel
     private lateinit var postAdapter: PostListAdapter
@@ -49,7 +48,7 @@ class LatestFragment : Fragment() {
                     override fun onItemClicked(post: Posts) {
                         startActivity(
                             Intent(context, DetailActivity::class.java)
-                                .putExtra("data", post)
+                                .putExtra(DetailActivity.EXTRA_DATA, post)
                         )
                     }
                 }

@@ -68,6 +68,18 @@ interface WordpressApi {
         fields: String
     ): List<Collection>
 
+    @GET("posts")
+    suspend fun searchPost(
+        @Query("page")
+        page: Int,
+        @Query("per_page")
+        perPage: Int,
+        @Query("_embed")
+        embed: Boolean,
+        @Query("search")
+        keyword: String
+    ): List<Posts>
+
     companion object {
         fun create(): WordpressApi {
             val httpLoggingInterceptor: HttpLoggingInterceptor = if (BuildConfig.DEBUG){
@@ -90,6 +102,7 @@ interface WordpressApi {
                 .readTimeout(30, TimeUnit.SECONDS)
                 .connectTimeout(30, TimeUnit.SECONDS)
                 .build()
+
 
             return Retrofit.Builder()
                 .baseUrl(BASE_URL)

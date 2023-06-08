@@ -8,25 +8,23 @@ import com.idn.rumayshomobile.utils.paging.CategoryPagingSource
 import com.idn.rumayshomobile.utils.paging.PostPagingSource
 import com.idn.rumayshomobile.utils.paging.TagPagingSource
 
-class WordPressRepository constructor(private val wordpressApi: WordpressApi) {
+class WordPressRepository(private val wordpressApi: WordpressApi) {
+
+    private val pagingConfig = PagingConfig(
+        pageSize = 10,
+        maxSize = 100,
+        enablePlaceholders = false
+    )
 
     fun getPosts() = Pager(
-        config = PagingConfig(
-            pageSize = 10,
-            maxSize = 100,
-            enablePlaceholders = false
-        ),
+        config = pagingConfig,
         pagingSourceFactory = {
             PostPagingSource(wordpressApi)
         }
     ).liveData
 
     fun getPostByCategory(categoryId: Int) = Pager(
-        config = PagingConfig(
-            pageSize = 10,
-            maxSize = 100,
-            enablePlaceholders = false
-        ),
+        config = pagingConfig,
         pagingSourceFactory = {
             PostPagingSource(
                 categoryId = categoryId,
@@ -36,11 +34,7 @@ class WordPressRepository constructor(private val wordpressApi: WordpressApi) {
     ).liveData
 
     fun getPostByTag(tagId: Int) = Pager(
-        config = PagingConfig(
-            pageSize = 10,
-            maxSize = 100,
-            enablePlaceholders = false
-        ),
+        config = pagingConfig,
         pagingSourceFactory = {
             PostPagingSource(
                 tagId = tagId,
@@ -50,24 +44,26 @@ class WordPressRepository constructor(private val wordpressApi: WordpressApi) {
     ).liveData
 
     fun getCategories() = Pager(
-        config = PagingConfig(
-            pageSize = 10,
-            maxSize = 100,
-            enablePlaceholders = false
-        ),
+        config = pagingConfig,
         pagingSourceFactory = {
             CategoryPagingSource(wordpressApi)
         }
     ).liveData
 
     fun getTags() = Pager(
-        config = PagingConfig(
-            pageSize = 10,
-            maxSize = 100,
-            enablePlaceholders = false
-        ),
+        config = pagingConfig,
         pagingSourceFactory = {
             TagPagingSource(wordpressApi)
+        }
+    ).liveData
+
+    fun searchPost(keyword: String) = Pager(
+        config = pagingConfig,
+        pagingSourceFactory = {
+            PostPagingSource(
+                keyword = keyword,
+                wordpressApi = wordpressApi
+            )
         }
     ).liveData
 

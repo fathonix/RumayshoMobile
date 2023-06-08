@@ -9,11 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.navArgs
 import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.idn.rumayshomobile.databinding.FragmentViewPagerBinding
 import com.idn.rumayshomobile.models.post.Posts
+import com.idn.rumayshomobile.models.type.CollectionType
 import com.idn.rumayshomobile.ui.view.DetailActivity
 import com.idn.rumayshomobile.utils.adapter.PostListAdapter
 import com.idn.rumayshomobile.utils.viewmodel.SharedViewModel
@@ -22,22 +24,22 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
-class AqidahFragment : Fragment() {
+class CollectionDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentViewPagerBinding
     private lateinit var viewModel: SharedViewModel
     private lateinit var postAdapter: PostListAdapter
     private lateinit var posts: LiveData<PagingData<Posts>>
+    private val navArgs: CollectionDetailFragmentArgs by navArgs()
 
-    companion object {
-        const val CATEGORY_ID = 6
-    }
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        binding = FragmentViewPagerBinding.inflate(layoutInflater, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = FragmentViewPagerBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[SharedViewModel::class.java]
         postAdapter = PostListAdapter()
-        posts = viewModel.getPostByCategory(CATEGORY_ID)
+        posts = when (navArgs.collectionType) {
+            CollectionType.CATEGORY -> viewModel.getPostByCategory(navArgs.collectionId)
+            CollectionType.TAG -> viewModel.getPostByTag(navArgs.collectionId)
+        }
 
         return binding.root
     }

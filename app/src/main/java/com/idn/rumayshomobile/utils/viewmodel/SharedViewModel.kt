@@ -34,4 +34,8 @@ class SharedViewModel : ViewModel() {
         return wordPressRepository.getTags().cachedIn(viewModelScope)
     }
 
+    fun searchPost(keyword: String): LiveData<PagingData<Posts>> {
+        return wordPressRepository.searchPost(keyword).cachedIn(viewModelScope)
+    }
+
 }

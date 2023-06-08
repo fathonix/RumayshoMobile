@@ -11,6 +11,7 @@ class PostPagingSource : PagingSource<Int, Posts> {
 
     private var categoryId: Int? = null
     private var tagId: Int? = null
+    private var keyword: String? = null
     private val wordpressApi: WordpressApi
 
     constructor(wordpressApi: WordpressApi) : super() {
@@ -24,6 +25,11 @@ class PostPagingSource : PagingSource<Int, Posts> {
 
     constructor(wordpressApi: WordpressApi, tagId: Int) : super() {
         this.tagId = tagId
+        this.wordpressApi = wordpressApi
+    }
+
+    constructor(wordpressApi: WordpressApi, keyword: String) : super() {
+        this.keyword = keyword
         this.wordpressApi = wordpressApi
     }
 
@@ -42,6 +48,13 @@ class PostPagingSource : PagingSource<Int, Posts> {
                 else if (tagId != null)
                     wordpressApi.getPosts(
                         tag = tagId!!,
+                        page = position,
+                        perPage = params.loadSize,
+                        embed = true,
+                    )
+                else if (keyword != null)
+                    wordpressApi.searchPost(
+                        keyword = keyword!!,
                         page = position,
                         perPage = params.loadSize,
                         embed = true,

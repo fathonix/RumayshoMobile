@@ -12,18 +12,19 @@ import com.idn.rumayshomobile.R
 class SplashActivity : AppCompatActivity() {
 
     private lateinit var mHandler: Handler
-    private val mRunnable: Runnable = Runnable {
-        if (!isFinishing) {
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
-        }
-    }
+    private lateinit var mRunnable: Runnable
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
         mHandler = Handler(Looper.myLooper()!!)
+        mRunnable = Runnable {
+            if (!isFinishing) {
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            }
+        }
 
         mHandler.postDelayed(mRunnable, 2000)
     }

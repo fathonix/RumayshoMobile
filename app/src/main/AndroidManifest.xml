@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RumayshoMobile">
         <activity
+            android:name=".ui.view.SearchActivity"
+            android:exported="true"
+            android:theme="@style/NoActionBar"/>
+        <activity
             android:name=".ui.view.DetailActivity"
             android:exported="true"/>
         <activity

@@ -14,8 +14,7 @@ import com.idn.rumayshomobile.databinding.PostRowItemBinding
 
 class PostListAdapter : PagingDataAdapter<Posts, PostListAdapter.PostViewHolder>(POST_COMPARATOR) {
 
-    inner class PostViewHolder(val binding: PostRowItemBinding) :
-        RecyclerView.ViewHolder(binding.root)
+    inner class PostViewHolder(val binding: PostRowItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     companion object {
         private val POST_COMPARATOR = object : DiffUtil.ItemCallback<Posts>() {
